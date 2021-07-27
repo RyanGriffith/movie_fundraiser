@@ -5,7 +5,7 @@ name = " "
 count = 0
 MAX_TICKETS = 5
 
-while name !="xxx" and count <= MAX_TICKETS:
+while name != "xxx" and count <= MAX_TICKETS:
 
     # get details
     name = input("name:  ")
