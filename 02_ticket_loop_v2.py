@@ -12,6 +12,8 @@ while name != "xxx" and count < MAX_TICKETS:
     name = input("name: ")
     count += 1
     print()
+    if name == "xxx":
+        count -= 1
 
 if count == MAX_TICKETS:
     print("You have sold all available tickets!")
