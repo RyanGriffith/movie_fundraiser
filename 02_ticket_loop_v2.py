@@ -14,6 +14,8 @@ while name != "xxx" and count < MAX_TICKETS:
     print()
     if name == "xxx":
         count -= 1
+    if name == " ":
+        print(error_message)
 
 if count == MAX_TICKETS:
     print("You have sold all available tickets!")
