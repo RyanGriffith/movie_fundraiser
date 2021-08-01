@@ -6,7 +6,6 @@ count = 0
 MAX_TICKETS = 5
 
 while name != "xxx" and count < MAX_TICKETS:
-  
 
     # tells user how many seats are left
     if count < 4:
