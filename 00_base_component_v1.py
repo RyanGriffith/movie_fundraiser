@@ -2,6 +2,8 @@
 
 # functions go here
 
+#not blank error
+
 def not_blank(question, error_message):
     valid = False
 
@@ -12,6 +14,29 @@ def not_blank(question, error_message):
             return response
         else:
             print(error_message)
+
+# number checker
+
+def int_check(question, low_num, high_num):
+
+    error = "Please enter a whole number between {} and {}".format(low_num, high_num)
+
+    valid = False
+    while not valid:
+
+        # ask user for number and if valid
+        try:
+            response = int(input(question))
+
+            if low_num <= response <= high_num:
+                print(error)
+
+            else:
+                print(error)
+
+        # if an integer is not entered, display error
+        except ValueError:
+            print(error)
 
 # *** main routine ***
 
@@ -57,6 +82,8 @@ else:
     print("You have sold {} tickets. There are still {} places available".format(count, MAX_TICKETS - count))
 
 # get age (between 11 and 130)
+
+age = int_check("age: ", 12, 130)
 
 # loop to ask for snacks
 
