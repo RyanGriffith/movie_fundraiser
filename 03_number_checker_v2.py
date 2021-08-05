@@ -1,8 +1,11 @@
 # function goes here
 
-def int_check(question, low_num, high_num):
+LowNumber = 12
+HighNumber = 130
 
-    error = "Please enter a whole number between {} and {}".format(low_num, high_num)
+def int_check(question):
+
+    error = "Please enter a whole number between {} and {}".format(LowNumber, HighNumber)
 
     valid = False
     while not valid:
@@ -11,11 +14,14 @@ def int_check(question, low_num, high_num):
         try:
             response = int(input(question))
 
-            if low_num <= response <= high_num:
+            if response <= 11:
+                print(error)
+
+            elif response >= 131:
                 print(error)
 
             else:
-                print(error)
+                return response
 
         # if an integer is not entered, display error
         except ValueError:
@@ -23,4 +29,4 @@ def int_check(question, low_num, high_num):
 
 # main routine goes here
 
-age = int_check("age: ", 12, 130)
+age = int_check("age: ")
