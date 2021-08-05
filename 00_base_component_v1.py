@@ -15,35 +15,7 @@ def not_blank(question, error_message):
         else:
             print(error_message)
 
-# number checker
 
-LowNumber = 12
-HighNumber = 130
-
-def int_check(question):
-
-    error = "Please enter a whole number between {} and {}".format(LowNumber, HighNumber)
-
-    valid = False
-    while not valid:
-
-        # ask user for number and if valid
-        try:
-            print("Your age between 12 and 130")
-            response = int(input(question))
-
-            if response <= 11:
-                print(error)
-
-            elif response >= 131:
-                print(error)
-
-            else:
-                return response
-
-        # if an integer is not entered, display error
-        except ValueError:
-            print(error)
 
 # *** main routine ***
 
@@ -92,7 +64,6 @@ else:
 
 # get age (between 11 and 130)
 
-age = int_check("age: ")
 
 # loop to ask for snacks
 
