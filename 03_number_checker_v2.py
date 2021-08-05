@@ -1,11 +1,11 @@
 # function goes here
 
-LowNumber = 12
-HighNumber = 130
+lownumber = 12
+highnumber = 130
 
 def int_check(question):
 
-    error = "Please enter a whole number between {} and {}".format(LowNumber, HighNumber)
+    error = "Please enter a whole number between {} and {}".format(lownumber, highnumber)
 
     valid = False
     while not valid:
