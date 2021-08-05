@@ -29,6 +29,7 @@ def int_check(question):
 
         # ask user for number and if valid
         try:
+            print("Your age between 12 and 130")
             response = int(input(question))
 
             if response <= 11:
@@ -56,6 +57,8 @@ def int_check(question):
 
 print("Order Name   ")
 
+print("Type 'quit' to stop")
+
 name = not_blank("Name: ", "Sorry - this can't be blank")
 
 # initialise loop so that it runs at least once
@@ -64,7 +67,7 @@ name = not_blank("Name: ", "Sorry - this can't be blank")
 count = 0
 MAX_TICKETS = 5
 
-while name != "xxx" and count < MAX_TICKETS:
+while name != "quit" and count < MAX_TICKETS:
 
     # tells user how many seats are left
     if count < 4:
