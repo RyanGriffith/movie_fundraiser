@@ -15,7 +15,32 @@ def not_blank(question, error_message):
         else:
             print(error_message)
 
+lownumber = 12
+highnumber = 130
 
+def int_check(question):
+
+    error = "Please enter a whole number between {} and {}".format(lownumber, highnumber)
+
+    valid = False
+    while not valid:
+
+        # ask user for number and if valid
+        try:
+            response = int(input(question))
+
+            if response <= 11:
+                print(error)
+
+            elif response >= 131:
+                print(error)
+
+            else:
+                return response
+
+        # if an integer is not entered, display error
+        except ValueError:
+            print(error)
 
 # *** main routine ***
 
@@ -27,7 +52,6 @@ def not_blank(question, error_message):
 
     # get name (can't be blank)
 
-print("Order Name   ")
 
 print("Type 'quit' to stop")
 
@@ -50,7 +74,12 @@ while name != "quit" and count < MAX_TICKETS:
         print("*** THERE IS ONE SEAT LEFT ***")
 
     # get details
+
+    # get name
     name = input("name: ")
+    # get age (between 11 and 130)
+    age = int_check("age: ")
+
     count += 1
     print()
     if name == "xxx":
@@ -62,7 +91,6 @@ if count == MAX_TICKETS:
 else:
     print("You have sold {} tickets. There are still {} places available".format(count, MAX_TICKETS - count))
 
-# get age (between 11 and 130)
 
 
 # loop to ask for snacks
