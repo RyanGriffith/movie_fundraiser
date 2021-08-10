@@ -79,12 +79,13 @@ while name != "quit" and count < MAX_TICKETS:
     name = input("name: ")
     # get age (between 11 and 130)
     age = int_check("age: ")
-
     count += 1
     print()
-    if name == "xxx":
-        count -= 1
 
+    if name == "quit":
+        count -= 1
+    if age == 999:
+        count -= 1
 if count == MAX_TICKETS:
     print("You have sold all available tickets!")
 
