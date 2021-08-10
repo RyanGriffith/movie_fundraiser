@@ -84,7 +84,7 @@ while name != "quit" and count < MAX_TICKETS:
 
     if name == "quit":
         count -= 1
-    if age == 999:
+    if age == 000:
         count -= 1
 if count == MAX_TICKETS:
     print("You have sold all available tickets!")
