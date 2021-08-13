@@ -1,7 +1,7 @@
 # import statements
 
 # functions go here
-    # not blank
+# not blank
 def not_blank(question, error_message):
     valid = False
 
@@ -14,12 +14,13 @@ def not_blank(question, error_message):
             print(error_message)
     # integer checker
 
-lownumber = 12
-highnumber = 130
+
+low_number = 12
+high_number = 130
+
 
 def int_check(question):
-
-    error = "Please enter a whole number between {} and {}".format(lownumber, highnumber)
+    error = "Please enter a whole number between {} and {}".format(low_number, high_number)
 
     valid = False
     while not valid:
@@ -35,12 +36,14 @@ def int_check(question):
                 print(error)
 
             else:
-                return response
+                return age
 
         # if an integer is not entered, display error
         except ValueError:
             print(error)
     # ticket price
+
+
 profit = 0
 
 # *** main routine ***
@@ -102,6 +105,5 @@ else:
     # ask for payment method
 
     # integer checker
-
 
 # output data to text file
