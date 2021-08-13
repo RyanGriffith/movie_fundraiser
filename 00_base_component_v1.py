@@ -1,9 +1,7 @@
 # import statements
 
 # functions go here
-
-#not blank error
-
+    # not blank
 def not_blank(question, error_message):
     valid = False
 
@@ -14,6 +12,7 @@ def not_blank(question, error_message):
             return response
         else:
             print(error_message)
+    # integer checker
 
 lownumber = 12
 highnumber = 130
@@ -41,6 +40,8 @@ def int_check(question):
         # if an integer is not entered, display error
         except ValueError:
             print(error)
+    # ticket price
+profit = 0
 
 # *** main routine ***
 
@@ -50,16 +51,7 @@ def int_check(question):
 
 # loop to get ticket details
 
-    # get name (can't be blank)
-
-
-print("Type 'quit' to stop")
-
-name = not_blank("Name: ", "Sorry - this can't be blank")
-
-# initialise loop so that it runs at least once
-
-
+name = " "
 count = 0
 MAX_TICKETS = 5
 
@@ -73,33 +65,43 @@ while name != "quit" and count < MAX_TICKETS:
     else:
         print("*** THERE IS ONE SEAT LEFT ***")
 
-    # get details
-
-    # get name
-    name = input("name: ")
-    # get age (between 11 and 130)
-    age = int_check("age: ")
+    # get name not blank
+    name = not_blank("Name: ", "Sorry - this can't be blank")
     count += 1
     print()
-
     if name == "quit":
         count -= 1
-    if age == 000:
-        count -= 1
+        break
+
+    # get age between 12 - 130
+    age = int(input("Age: "))
+
+    # ticket price
+    if age < 16:
+        ticket_price = 7.5
+    elif age < 65:
+        ticket_price = 10.5
+    else:
+        ticket_price = 6.5
+
+    profit_made = ticket_price - 5
+    profit += profit_made
+
+    print("{} : ${:.2f}".format(name, ticket_price))
+
 if count == MAX_TICKETS:
     print("You have sold all available tickets!")
 
 else:
     print("You have sold {} tickets. There are still {} places available".format(count, MAX_TICKETS - count))
 
+    # loop to ask for snacks
 
+    # calculate snack price
 
-# loop to ask for snacks
+    # ask for payment method
 
-# calculate snacks price
+    # integer checker
 
-# ask for payment method
-
-# calculate total sales and profit
 
 # output data to text file
