@@ -82,15 +82,17 @@ while name != "quit" and count < MAX_TICKETS:
     # ticket price
     if age < 16:
         ticket_price = 7.5
-    elif age < 65:
+    elif age < 66:
         ticket_price = 10.5
-    else:
+    elif age < 130:
         ticket_price = 6.5
-
+    else:
+        print("This isn't a verified age: {} Only ages 12 - 130 are verified".format(age))
+        break
     profit_made = ticket_price - 5
     profit += profit_made
 
-    print("{} : ${:.2f}".format(name, ticket_price))
+    print("{} ticket price: ${:.2f}".format(name, ticket_price))
 
 if count == MAX_TICKETS:
     print("You have sold all available tickets!")
