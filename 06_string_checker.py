@@ -21,7 +21,6 @@ def string_checker(question, to_check):
                     return item
         print("sorry that isn't a valid item")
 
-
 # main routine
 
 for item in range (0 , 6):
