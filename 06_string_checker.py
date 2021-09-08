@@ -26,6 +26,6 @@ def string_checker(question, to_check):
 
 for item in range (0 , 6):
 
-    want_snacks = string_checker("do you want snacks?", ["yes", "no"])
-    print("Answer OK, You said:", want_snacks)
+    want_snacks = string_checker("do you want snacks? ", ["yes", "no"])
+    print("Answer OK, You said: ", want_snacks)
     print()
