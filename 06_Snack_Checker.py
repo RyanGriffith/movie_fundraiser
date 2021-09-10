@@ -11,7 +11,7 @@ snack_ok = ""
 snack = ""
 
 # loop 3 times for fast testing
-for item in range(0, 1):
+for item in range(0, 3):
 
     # asks user for desired snack
     desired_snack = input("Snack: ")
@@ -29,9 +29,8 @@ for item in range(0, 1):
         # if the chosen snack isn't valid
         else:
             snack_ok = "no"
-            break
     # if snack not ok - ask again
     if snack_ok == "yes":
         print("snack choice: ", snack)
-    else:
+    elif snack_ok == "no":
         print("invalid snack")
