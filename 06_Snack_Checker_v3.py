@@ -85,4 +85,3 @@ else:
 
     for item in snack_order:
         print(item)
-
