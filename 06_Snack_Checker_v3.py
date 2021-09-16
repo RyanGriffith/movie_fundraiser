@@ -37,7 +37,7 @@ yes_no = [
     ["yes", "y"],
     ["no", "n"]
 ]
-no_message = ""
+
 
 # holds snack choice
 snack_order = []
