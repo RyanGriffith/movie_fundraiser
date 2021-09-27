@@ -25,10 +25,11 @@ def string_check(choice, options):
     if is_valid == "yes":
         return chosen
     else:
-        return "invalid choice"
+        return "Invalid choice"
+
 
 # regular expression
-number_regex = "[1-9]"
+number_regex = "^[1-9]"
 
 # valid snacks list
 valid_snacks = [
@@ -40,17 +41,20 @@ valid_snacks = [
 ]
 
 # valid choice
-yes_no = []
-snack_order = ""
+yes_no = [
+    ["yes", "y"],
+    ["no", "n"]
+]
+snack_order = []
 
 # ask user if want snacks
-check_snack = "invalid choice"
-while check_snack == "invalid choice":
+check_snack = "Invalid choice"
+while check_snack == "Invalid choice":
     want_snack = input("do you want snacks?: ").lower()
     check_snack = string_check(want_snack, yes_no)
 
 # if want snack is yes
-if check_snack == "yes":
+if check_snack == "yes" or "y":
 
     desired_snack = ""
     while desired_snack != "quit":
@@ -78,13 +82,13 @@ if check_snack == "yes":
         # check snack amount
         if amount >= 5:
             print("sorry - we have a 4 snack maximum")
-            snack_choice = "invalid choice"
+            snack_choice = "Invalid choice"
 
         # add snack and amount
         amount_snack = "{}  {}".format(amount, snack_choice)
 
         # check that snack is not the exit code
-        if snack_choice != "quit" and snack_choice != "invalid choice":
+        if snack_choice != "quit" and snack_choice != "Invalid choice":
             snack_order.append(amount_snack)
 
 # show snack orders
