@@ -1,6 +1,7 @@
+# Component 6 snack checker v5
 import re
 
-# functions
+
 def string_check(choice, options):
 
     is_valid = ""
@@ -8,63 +9,66 @@ def string_check(choice, options):
 
     for var_list in options:
 
-        # if the snack is in one of the lists
+        # If the snack is in the list return full response
         if choice in var_list:
 
-            # get full name of snack
-            # in title case so it looks nice
+            # Get full name of snack and put it in title case
             chosen = var_list[0].title()
             is_valid = "yes"
             break
 
-        # if the chosen option not valid
+        # If chosen option is not valid set to no
         else:
             is_valid = "no"
 
-    # if snack is no OK ask again
+    # If snack is not ok ask question again
     if is_valid == "yes":
         return chosen
+
     else:
         return "Invalid choice"
 
 
-# regular expression
+# Regular expressions
 number_regex = "^[1-9]"
 
-# valid snacks list
+# Snack list
 valid_snacks = [
     ["popcorn", "p", "corn", "a"],
-    ["M&Ms", "m&ms", "mms", "m", "b"],
+    ["M&Ms", "m&ms", "m", "mms", "b"],
     ["pita chips", "chips", "pc", "pita", "c"],
     ["water", "w", "d"],
-    ["orange juice", "oj", "juice", "e"]
+    ["orange juice", "oj", "c"]
 ]
 
-# valid choice
+# Yes_no list
 yes_no = [
     ["yes", "y"],
     ["no", "n"]
 ]
+
+# Holds snack order for one person
 snack_order = []
 
-# ask user if want snacks
+# Ask user if they want snacks
 check_snack = "Invalid choice"
 while check_snack == "Invalid choice":
-    want_snack = input("do you want snacks?: ").lower()
+    want_snack = input("Do you want snacks?: ").lower()
     check_snack = string_check(want_snack, yes_no)
 
-# if want snack is yes
-if check_snack == "yes" or "y":
+# If user input is yes ask what snacks they want
+if check_snack == "Yes":
 
     desired_snack = ""
-    while desired_snack != "quit":
-        # ask user what snack
-        desired_snack = input("snack: ").lower
+    while desired_snack != "xxx":
 
-        if desired_snack == "quit":
+        # Ask user for desired snack
+        desired_snack = input("snack: ").lower()
+
+        # Exit code
+        if desired_snack == "xxx":
             break
 
-        # if item has a number
         if re.match(number_regex, desired_snack):
             amount = int(desired_snack[0])
             desired_snack = desired_snack[1:]
@@ -73,31 +77,31 @@ if check_snack == "yes" or "y":
             amount = 1
             desired_snack = desired_snack
 
-        # remove white space
+        # Remove white space around desired snack
         desired_snack = desired_snack.strip()
 
-        # check if snack is valid
+        # Check if snack is valid
         snack_choice = string_check(desired_snack, valid_snacks)
 
-        # check snack amount
+        # Check if snack number is valid
         if amount >= 5:
-            print("sorry - we have a 4 snack maximum")
+            print("Sorry we have a max of 4 snacks")
             snack_choice = "Invalid choice"
 
-        # add snack and amount
-        amount_snack = "{}  {}".format(amount, snack_choice)
+        # Add snack to list
+        amount_snack = "{} {}".format(amount, snack_choice)
 
-        # check that snack is not the exit code
-        if snack_choice != "quit" and snack_choice != "Invalid choice":
-            snack_order.append(amount_snack)
+        # Check if snack is not exit code
+        if snack_choice != "xxx" and snack_choice != "Invalid choice":
+            snack_order.append(snack_choice)
 
-# show snack orders
+# Show snack order
 print()
 if len(snack_order) == 0:
-    print("snacks ordered: none")
+    print("Snacks order: None")
 
 else:
-    print("snacks ordered: ")
+    print("Snacks Ordered: ")
 
     for item in snack_order:
         print(item)
